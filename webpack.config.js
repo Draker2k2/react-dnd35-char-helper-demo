@@ -1,19 +1,30 @@
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
+
+
 module.exports = {
   entry: './src/js/main.js',
 
+  // TO UPLOAD TO HEROKU.
   output: {
     path: './dist',
     filename: 'bundle.js'
   },
+
+  // TO TEST.
+  /*
+  output: {
+    path: __dirname + '/dist/js',
+    filename: 'bundle.js'
+  },
+  */
 
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
             presets: ['es2015']
         }
@@ -43,7 +54,7 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx']
   },
 
   devServer: {
