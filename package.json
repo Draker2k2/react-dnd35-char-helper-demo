@@ -1,10 +1,6 @@
 {
   "name": "webpackPhaserES6",
   "version": "1.0.0",
-  "engines": {
-    "node": "7.0.0",
-    "npm": "3.10.8"
-  },
   "description": "An awesome game boilerplate!",
   "main": "src/js/main.jsx",
   "scripts": {
