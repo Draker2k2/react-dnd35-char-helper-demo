@@ -6,20 +6,20 @@ module.exports = {
   entry: './src/js/main.jsx',
 
   // TO UPLOAD TO HEROKU.
-  
+  /*
   output: {
     path: './dist',
     filename: 'bundle.js'
   },
-  
+  */
 
   // TO TEST.
-  /*
+  
   output: {
     path: __dirname + '/dist/js',
     filename: 'bundle.js'
   },
-  */
+  
 
   module: {
     loaders: [
