@@ -3,13 +3,15 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
-  entry: './src/js/main.js',
+  entry: './src/js/main.jsx',
 
   // TO UPLOAD TO HEROKU.
+  
   output: {
     path: './dist',
     filename: 'bundle.js'
   },
+  
 
   // TO TEST.
   /*
@@ -22,11 +24,11 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-            presets: ['es2015']
+            presets: ['react']
         }
       },
       {
