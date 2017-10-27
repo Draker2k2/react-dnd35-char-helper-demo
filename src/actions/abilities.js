@@ -10,7 +10,7 @@ export const ACTION_TYPES = {
   CALCULATE_MODS: 'ABILITY_calculate_mods',
 };
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 export const changeValueForLevelXX = (e) => {
   const index = e.nativeEvent.target.selectedIndex;
