@@ -23,6 +23,14 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.es6$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        query: {
+            presets: ['es2015']
+        }
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
