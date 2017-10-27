@@ -19,7 +19,7 @@ export const changeValueForLevelXX = (e) => {
 };
 
 export const getData = () => (dispatch) => {
-  const request = axios(`http://localhost:${PORT}/abilities/`);
+  const request = axios(`https://secret-dawn-75685.herokuapp.com/abilities/`);
   dispatch({ type: ACTION_TYPES.FETCH_DATA });
   request
   .then((response) => {
