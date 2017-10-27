@@ -21,7 +21,7 @@ app.use('/', require('./controllers'));
 //------------------
 
 app.use(express.static(path.join(__dirname, 'dist')));
-app.set('port', process.env.PORT || 5000);
+app.set('port', 5000);
 
 /*
 var server = app.listen(app.get('port'), function() {
