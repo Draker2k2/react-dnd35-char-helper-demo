@@ -4,7 +4,7 @@
   "description": "An awesome game boilerplate!",
   "main": "src/js/main.jsx",
   "scripts": {
-    "start": "webpack-dev-server --progress && node server.js",
+    "start": "./node_modules/webpack/bin/webpack.js --progress && node server.js",
     "dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
