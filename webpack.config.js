@@ -15,7 +15,7 @@ module.exports = {
 
   // TO TEST.
   output: {
-    path: __dirname + '/dist/js',
+    path: __dirname + '/dist',
     filename: 'bundle.js'
   },
   

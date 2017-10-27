@@ -31,8 +31,8 @@ var server = app.listen(app.get('port'), function() {
 
 //-----------------------
 function listen() {
-  if (app.get('env') === 'test') return;
   app.listen(app.get('port'));
+  console.log('server started in PORT: '+app.get('port'));
 }
 
 // DEVELOPMENT 
@@ -55,11 +55,6 @@ connect(`mongodb://localhost:${PORTMONGOSE}/${DB}`)
 */
 
 // HEROKU 
-
-const DB = 'myproyect';
-const PORTMONGOSE = 27065;
-
-
 function connect() {
   //return mongoose.connect('mongodb://draker:239857@ds127065.mlab.com:27065/rol').connection;
   return mongoose.connect('mongodb://draker:239857@ds127065.mlab.com:27065/rol').connection;
