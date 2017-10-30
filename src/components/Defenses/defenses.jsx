@@ -61,9 +61,9 @@ Defenses.propTypes = {
     inherentValue: PropTypes.number,
     enhancementValue: PropTypes.number,
   })).isRequired,
-  dexterityMod: PropTypes.string.isRequired,
-  constitutionMod: PropTypes.string.isRequired,
-  wisdomMod: PropTypes.string.isRequired,
+  dexterityMod: PropTypes.number.isRequired,
+  constitutionMod: PropTypes.number.isRequired,
+  wisdomMod: PropTypes.number.isRequired,
   getData: PropTypes.func.isRequired,
 };
 
