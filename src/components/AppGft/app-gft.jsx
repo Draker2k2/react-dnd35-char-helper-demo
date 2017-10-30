@@ -163,7 +163,6 @@ if(window.innerWidth < 1000){
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Overview"><br />
             <Grid fluid>
-              <div>INNER WITDH: {window.innerWidth}</div>
               <Row className="show-grid">
                 <Col xs={5} md={6}>
                   <Switch>
@@ -306,7 +305,6 @@ if(window.innerWidth < 1000){
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Overview"><br />
             <Grid fluid>
-              <div>INNER WITDH: {window.innerWidth}</div>
               <Row className="show-grid">
                 <Col xs={3} md={3}>
                   <Switch>
