@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const defenseSchema = new mongoose.Schema({
+const defensesSchema = new mongoose.Schema({
   id: String,
   name: String,
   initialValue: { type: Number, default: 0 },
@@ -8,4 +8,4 @@ const defenseSchema = new mongoose.Schema({
   enhancementValue: { type: Number, default: 0 },
 });
 
-module.exports = mongoose.model('defenseSchema', defenseSchema, 'defenseSchema');
+module.exports = mongoose.model('defensesSchema', defensesSchema, 'defensesSchema');
