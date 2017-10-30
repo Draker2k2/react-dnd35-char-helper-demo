@@ -109,7 +109,7 @@ export default function (state = INITIAL_STATE, action) {
       recalculateModsAndBonuses(state);
 
       return { state,
-        abilities: [...notMatchedValues2, matchedValue2].sort((a, b) => a.id > b.id) };
+        abilities: [notMatchedValues2, matchedValue2].sort((a, b) => a.id > b.id) };
     }
 
     //------------------------------------------------------------------------------
@@ -127,12 +127,12 @@ export default function (state = INITIAL_STATE, action) {
 
       recalculateModsAndBonuses(state);
       return { state,
-        abilities: [...restOfAbilities, abilityToIncrement].sort((a, b) => a.id > b.id) };
+        abilities: [restOfAbilities, abilityToIncrement].sort((a, b) => a.id > b.id) };
     }
 
     //------------------------------------------------------------------------------
     case ACTION_TYPES.ADD_ability:
-      return { state, abilities: [...state.abilities, action.payload] };
+      return { state, abilities: [state.abilities, action.payload] };
 
     //------------------------------------------------------------------------------
     case ACTION_TYPES.CALCULATE_MODS:
