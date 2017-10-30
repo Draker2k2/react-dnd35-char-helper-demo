@@ -21,7 +21,7 @@ class Feats extends Component {
         {feats.length > 0 && feats.map(feat => (
           <OverlayTrigger
             trigger="hover"
-            placement="right"
+            placement="left"
             overlay={
               <Popover id="popover-trigger-hover" title={feat.name} >
                 <p>{feat.description}</p><br />

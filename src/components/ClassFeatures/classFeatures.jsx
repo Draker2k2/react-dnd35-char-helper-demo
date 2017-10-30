@@ -22,7 +22,7 @@ class ClassFeatures extends Component {
         {classFeatures.length > 0 && classFeatures.map(classFeature => (
           <OverlayTrigger
             trigger="hover"
-            placement="right"
+            placement="left"
             overlay={
               <Popover id="popover-trigger-hover" title={classFeature.name} >
                 <p>{classFeature.description}</p><br />

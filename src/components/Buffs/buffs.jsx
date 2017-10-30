@@ -27,7 +27,7 @@ class Buffs extends Component {
         {buffs.length > 0 && buffs.map(buff => (
           <OverlayTrigger
             trigger="hover"
-            placement="right"
+            placement="left"
             overlay={
               <Popover id="popover-trigger-hover" title={buff.name} >
                 <p>{buff.description}</p><br />
