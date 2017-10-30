@@ -22,7 +22,7 @@ if(window.innerWidth < 1000){
     <BrowserRouter>
       <Wrapper>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
-        <Title name="GFT React App" />
+        <Title name="Manus & Dragons - Frederic Character Helper" />
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Overview"><br />
             <Grid fluid>
@@ -159,7 +159,7 @@ if(window.innerWidth < 1000){
     <BrowserRouter>
       <Wrapper>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
-        <Title name="GFT React App" />
+        <Title name="Manus & Dragons - Frederic Character Helper" />
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Overview"><br />
             <Grid fluid>
@@ -302,7 +302,7 @@ if(window.innerWidth < 1000){
     <BrowserRouter>
       <Wrapper>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
-        <Title name="GFT React App" />
+        <Title name="Manus & Dragons - Frederic Character Helper" />
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Overview"><br />
             <Grid fluid>
