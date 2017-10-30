@@ -9,11 +9,11 @@ const INITIAL_STATE = {
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
     case ACTION_TYPES.FETCH_DATA:
-      return { state, loading: true };
+      return { ...state, loading: true };
     case ACTION_TYPES.FETCH_DATA_SUCCESFULL:
-      return { state, defenses: action.payload, loading: false };
+      return { ...state, defenses: action.payload, loading: false };
     case ACTION_TYPES.FETCH_DATA_ERROR:
-      return { state, loading: false, error: action.payload };
+      return { ...state, loading: false, error: action.payload };
     case ACTION_TYPES.INCREMENT_DEFENSE: {
       const restOfDefenses = state.defenses.filter(item =>
         item.id !== action.payload.defenseName);
@@ -24,8 +24,8 @@ export default function (state = INITIAL_STATE, action) {
       } else {
         defenseToIncrement.inherentValue += action.payload.value;
       }
-      return { state,
-        defenses: [restOfDefenses, defenseToIncrement].sort((a, b) => a.name > b.name) };
+      return { ...state,
+        defenses: [...restOfDefenses, defenseToIncrement].sort((a, b) => a.name > b.name) };
     }
     default:
       return state;

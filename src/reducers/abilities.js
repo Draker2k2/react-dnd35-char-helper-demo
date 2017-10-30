@@ -75,15 +75,15 @@ export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
     //------------------------------------------------------------------------------
     case ACTION_TYPES.FETCH_DATA:
-      return { state, loading: true };
+      return { ...state, loading: true };
 
     //------------------------------------------------------------------------------
     case ACTION_TYPES.FETCH_DATA_SUCCESFULL:
-      return { state, abilities: action.payload, loading: false };
+      return { ...state, abilities: action.payload, loading: false };
 
     //------------------------------------------------------------------------------
     case ACTION_TYPES.FETCH_DATA_ERROR:
-      return { state, loading: false, error: action.payload };
+      return { ...state, loading: false, error: action.payload };
 
     //------------------------------------------------------------------------------
     case ACTION_TYPES.INCREMENT_VALUE_FOR_LEVEL_XX: {
@@ -92,7 +92,7 @@ export default function (state = INITIAL_STATE, action) {
         const allValues = state.abilities.filter(ability => ability.name !== action.payload.id);
         allValues.map(ability => (ability.levelValue[action.payload.level] > 0 ?
           decrementAbility(ability, action.payload.level) : recalculateModsAndBonuses(state)));
-        return { state, abilities: allValues };
+        return { ...state, abilities: allValues };
       }
 
       // ADD BONUS LEVEL.
@@ -108,8 +108,8 @@ export default function (state = INITIAL_STATE, action) {
 
       recalculateModsAndBonuses(state);
 
-      return { state,
-        abilities: [notMatchedValues2, matchedValue2].sort((a, b) => a.id > b.id) };
+      return { ...state,
+        abilities: [...notMatchedValues2, matchedValue2].sort((a, b) => a.id > b.id) };
     }
 
     //------------------------------------------------------------------------------
@@ -126,18 +126,18 @@ export default function (state = INITIAL_STATE, action) {
       }
 
       recalculateModsAndBonuses(state);
-      return { state,
-        abilities: [restOfAbilities, abilityToIncrement].sort((a, b) => a.id > b.id) };
+      return { ...state,
+        abilities: [...restOfAbilities, abilityToIncrement].sort((a, b) => a.id > b.id) };
     }
 
     //------------------------------------------------------------------------------
     case ACTION_TYPES.ADD_ability:
-      return { state, abilities: [state.abilities, action.payload] };
+      return { ...state, abilities: [...state.abilities, action.payload] };
 
     //------------------------------------------------------------------------------
     case ACTION_TYPES.CALCULATE_MODS:
       recalculateModsAndBonuses(state);
-      return { state };
+      return { ...state };
 
     //------------------------------------------------------------------------------
     default:

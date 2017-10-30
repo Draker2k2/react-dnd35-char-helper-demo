@@ -11,7 +11,9 @@ const AppGFT = () => (
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
       <Title name="GFT React App" />
       <AbilitiesContainer />
+      <br />a
       <DefensesContainer />
+      <br />b
     </Wrapper>
   </BrowserRouter>
 );
