@@ -226,58 +226,58 @@ if(window.innerWidth < 1000){
                   <td>
                     <Grid>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} ><ItemsFiltradosContainer slotToFilter={'head'} /></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><ItemsFiltradosContainer slotToFilter={'head'} /></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'throath'} /></Col><Col xs={2} md={2} /><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'face'} /></Col>
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'throath'} /></Col><Col xs={2} md={2} /><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'face'} /></Col>
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={1} md={2} /><Col xs={1} md={2} /><Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'shoulders'} /></Col>
+                        <Col xsOffset={2} mdOffset={3} xs={1} md={2} /><Col xs={1} md={2} /><Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'shoulders'} /></Col>
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} /><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'body'} /></Col><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'torso'} /></Col>
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} /><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'body'} /></Col><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'torso'} /></Col>
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'arms'} /></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'arms'} /></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'ring'} /></Col><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'waist'} /></Col><Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'ring'} /></Col>
+                        <Col xsOffset={2} mdOffset={3} xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'ring'} /></Col><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'waist'} /></Col><Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'ring'} /></Col>
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'weapon'} /></Col><Col xs={1} md={2} /><Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'weapon'} /></Col>
+                        <Col xsOffset={2} mdOffset={3} xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'weapon'} /></Col><Col xs={1} md={2} /><Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'weapon'} /></Col>
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} /><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'feet'} /></Col><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'wondrous'} /></Col>
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} /><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'feet'} /></Col><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'wondrous'} /></Col>
                       </Row>
                       <Row className="show-grid">
-                        <Col xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                     </Grid>
                   </td>
