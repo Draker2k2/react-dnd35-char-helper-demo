@@ -36,7 +36,7 @@ function listen() {
 }
 
 // DEVELOPMENT 
-
+/*
 const DB = 'myproyect';
 const PORTMONGOSE = 27017;
 
@@ -52,10 +52,10 @@ connect(`mongodb://localhost:${PORTMONGOSE}/${DB}`)
     .once('open', listen);
 
 //-----------------------
-
+*/
 
 // HEROKU 
-/*
+
 function connect() {
   //return mongoose.connect('mongodb://draker:239857@ds127065.mlab.com:27065/rol').connection;
   return mongoose.connect('mongodb://draker:239857@ds127065.mlab.com:27065/rol').connection;
@@ -67,4 +67,3 @@ connect('mongodb://draker:239857@ds127065.mlab.com:27065/rol')
     .once('open', listen);
 
 //-----------------------
-*/
