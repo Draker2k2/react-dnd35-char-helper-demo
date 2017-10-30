@@ -10,7 +10,7 @@ export const ACTION_TYPES = {
   CALCULATE_MODS: 'ABILITY_calculate_mods',
 };
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 
 export const changeValueForLevelXX = (e) => {
   const index = e.nativeEvent.target.selectedIndex;
@@ -19,7 +19,8 @@ export const changeValueForLevelXX = (e) => {
 };
 
 export const getData = () => (dispatch) => {
-  const request = axios(`https://secret-dawn-75685.herokuapp.com/abilities/`);
+  // const request = axios(`https://secret-dawn-75685.herokuapp.com/abilities/`);
+  const request = axios(`http://localhost:${PORT}/abilities/`);
   dispatch({ type: ACTION_TYPES.FETCH_DATA });
   request
   .then((response) => {

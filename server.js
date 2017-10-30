@@ -21,7 +21,7 @@ app.use('/', require('./controllers'));
 //------------------
 
 app.use(express.static(path.join(__dirname, 'dist')));
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 8080);
 
 /*
 var server = app.listen(app.get('port'), function() {
@@ -55,6 +55,7 @@ connect(`mongodb://localhost:${PORTMONGOSE}/${DB}`)
 */
 
 // HEROKU 
+
 function connect() {
   //return mongoose.connect('mongodb://draker:239857@ds127065.mlab.com:27065/rol').connection;
   return mongoose.connect('mongodb://draker:239857@ds127065.mlab.com:27065/rol').connection;

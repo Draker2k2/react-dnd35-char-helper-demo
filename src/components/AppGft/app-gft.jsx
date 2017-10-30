@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Wrapper from './wrapper';
 import Title from '../../components/Title';
 import AbilitiesContainer from '../../containers/AbilitiesContainer';
-// import DamageContainer from '../../containers/DamageContainer';
+import DefensesContainer from '../../containers/DefensesContainer';
 
 const AppGFT = () => (
   <BrowserRouter>
@@ -11,6 +11,7 @@ const AppGFT = () => (
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
       <Title name="GFT React App" />
       <AbilitiesContainer />
+      <DefensesContainer />
     </Wrapper>
   </BrowserRouter>
 );
