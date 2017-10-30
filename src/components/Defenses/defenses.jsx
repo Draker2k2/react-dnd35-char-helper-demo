@@ -20,28 +20,36 @@ class Defenses extends Component {
               placement="right"
               overlay={
                 <Popover id="popover-trigger-focus" title="Popover left">
-                  <br />
-                  <strong>Defense Initial Value: {defense.initialValue}</strong><br />
-                  <strong>Defense Inherent Value: {defense.inherentValue}</strong><br />
-                  <strong>Defense Enhancement Value: {defense.enhancementValue}</strong><br />
-                  <strong>Defense Ability Modifier:
-                    {(defense.id === 'AC' ? <span>{dexterityMod}</span> : false) ||
-                    (defense.id === 'Reflexes' ? <span>{dexterityMod}</span> : false) ||
-                    (defense.id === 'Fortitude' ? <span>{constitutionMod}</span> : false) ||
-                    (defense.id === 'Will' ? <span>{wisdomMod}</span> : false)}
+                  {(defense.bonuses.map(bonus =>
+                     (bonus.value !== 0 ? <strong><p>{bonus.type} bonus: {bonus.value}</p></strong> : '')))}
+                  <strong>
+                    {defense.id !== 'AC' ?
+                      (defense.classModifiers.map(classModifier => (
+                        +classModifier.value !== 0 ? <strong><p>{classModifier.class}: {classModifier.value}</p></strong> : ''))
+                      ) : '' }
+                  </strong>
+                  <strong>
+                    {(defense.id === 'AC' ?
+                      <strong>
+                        <p>Base Value: 10</p>
+                        <p>Dexterity Modifier: {dexterityMod}</p>
+                      </strong> : false) ||
+                    (defense.id === 'Reflexes' ? <span>Dexterity Modifier: {dexterityMod}</span> : false) ||
+                    (defense.id === 'Fortitude' ? <span>Constitution Modifier: {constitutionMod}</span> : false) ||
+                    (defense.id === 'Will' ? <span>Wisdom Modifier: {wisdomMod}</span> : false)}
                   </strong>
                 </Popover>}
             >
-              <Button bsStyle="primary" style={wellStyles}>
+              <Button bsStyle="default" style={wellStyles}>
                 <td width="80" style={tdRightStyle}>
                   {defense.name}:
                 </td>
                 <td width="40">
                   <div>
-                    {(defense.id === 'AC' ? <div> {defense.initialValue + defense.inherentValue + defense.enhancementValue + dexterityMod} </div> : false) ||
-                    (defense.id === 'Reflexes' ? <div> {defense.initialValue + defense.inherentValue + defense.enhancementValue + dexterityMod} </div> : false) ||
-                    (defense.id === 'Fortitude' ? <div> {defense.initialValue + defense.inherentValue + defense.enhancementValue + constitutionMod} </div> : false) ||
-                    (defense.id === 'Will' ? <div> {defense.initialValue + defense.inherentValue + defense.enhancementValue + wisdomMod} </div> : <div />)}
+                    {(defense.id === 'AC' ? <div> {defense.initialValue + defense.totalBonus + dexterityMod} </div> : false) ||
+                    (defense.id === 'Reflexes' ? <div> {defense.initialValue + defense.totalBonus + dexterityMod} </div> : false) ||
+                    (defense.id === 'Fortitude' ? <div> {defense.initialValue + defense.totalBonus + constitutionMod} </div> : false) ||
+                    (defense.id === 'Will' ? <div> {defense.initialValue + defense.totalBonus + wisdomMod} </div> : <div />)}
                   </div>
                 </td>
               </Button>
@@ -57,13 +65,12 @@ class Defenses extends Component {
 Defenses.propTypes = {
   defenses: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
+    totalBonus: PropTypes.number,
     initialValue: PropTypes.number,
-    inherentValue: PropTypes.number,
-    enhancementValue: PropTypes.number,
   })).isRequired,
-  dexterityMod: PropTypes.number.isRequired,
-  constitutionMod: PropTypes.number.isRequired,
-  wisdomMod: PropTypes.number.isRequired,
+  dexterityMod: PropTypes.string.isRequired,
+  constitutionMod: PropTypes.string.isRequired,
+  wisdomMod: PropTypes.string.isRequired,
   getData: PropTypes.func.isRequired,
 };
 
