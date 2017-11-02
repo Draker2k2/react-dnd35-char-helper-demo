@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Wrapper from './wrapper';
 import Title from '../../components/Title';
-import { Tabs, Tab, Panel, PanelGroup, Grid, Col, Row } from 'react-bootstrap';
+import { Tabs, Tab, Panel, PanelGroup, Grid, Col, Row, Button } from 'react-bootstrap';
 import AbilitiesContainer from '../../containers/AbilitiesContainer';
 import DefensesContainer from '../../containers/DefensesContainer';
 import ItemsContainer from '../../containers/ItemsContainer';
@@ -16,6 +16,77 @@ import FeatsContainer from '../../containers/FeatsContainer';
 import HistoryContainer from '../../containers/HistoryContainer';
 
 var AppGFT = "";
+function activate() {
+  // --- ABILITY LEVEL INCREMENT ACTIVATION
+  const event_2 = new Event('change', { bubbles: true });
+  const level4 = document.getElementById('AbilitiesIncrementLevel__4');
+  level4.options[2].selected = true;
+  level4.dispatchEvent(event_2);
+
+  const level8 = document.getElementById('AbilitiesIncrementLevel__8');
+  level8.options[4].selected = true;
+  level8.dispatchEvent(event_2);
+
+  // --- FEATS & CLASS FEATURES SLOTS ACTIVATION
+  document.getElementById('SwashbucklerGrace').click();
+  document.getElementById('SwordsageWeaponFocus').click();
+  document.getElementById('ShadowHandStance').click();
+  document.getElementById('ShadowHandDisciplineEnchantment').click();
+  
+  // --- GEAR SLOTS ACTIVATION
+  const event = new Event('change', { bubbles: true });
+
+  const face = document.getElementById('face');
+  face.options[1].selected = true;
+  face.dispatchEvent(event);
+    
+  const shoulders = document.getElementById('shoulders');
+  shoulders.options[1].selected = true;
+  shoulders.dispatchEvent(event);  
+
+  const weapon = document.getElementById('weapon');
+  weapon.options[1].selected = true;
+  weapon.dispatchEvent(event); 
+  
+  const ring = document.getElementById('ring');
+  ring.options[3].selected = true;
+  ring.dispatchEvent(event); 
+
+  const torso = document.getElementById('torso');
+  torso.options[1].selected = true;
+  torso.dispatchEvent(event); 
+
+  const body = document.getElementById('body');
+  body.options[1].selected = true;
+  body.dispatchEvent(event);
+
+  const arms = document.getElementById('arms');
+  arms.options[1].selected = true;
+  arms.dispatchEvent(event);
+
+  const hands = document.getElementById('hands');
+  hands.options[1].selected = true;
+  hands.dispatchEvent(event);
+
+  const feet = document.getElementById('feet');
+  feet.options[1].selected = true;
+  feet.dispatchEvent(event);
+
+  const wondrous = document.getElementById('wondrous');
+  wondrous.options[1].selected = true;
+  wondrous.dispatchEvent(event);
+
+  const waist = document.getElementById('waist');
+  waist.options[1].selected = true;
+  waist.dispatchEvent(event);
+
+  const throath = document.getElementById('throath');
+  throath.options[1].selected = true;
+  throath.dispatchEvent(event);
+
+  // --------------------------
+}
+
 
 if(window.innerWidth < 1000){
   AppGFT = () => (
@@ -25,6 +96,9 @@ if(window.innerWidth < 1000){
         <Title name="Manus & Dragons - Frederic Character Helper" />
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Overview"><br />
+            <Button onClick={activate()}>
+              Predefined State
+            </Button>
             <Grid fluid>
               <Row className="show-grid">
                 <Col>
@@ -165,6 +239,9 @@ if(window.innerWidth < 1000){
         <Title name="Manus & Dragons - Frederic Character Helper" />
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Overview"><br />
+            <Button onClick={activate}>
+              Predefined State
+            </Button>
             <Grid fluid>
               <Row className="show-grid">
                 <Col xs={5} md={6}>

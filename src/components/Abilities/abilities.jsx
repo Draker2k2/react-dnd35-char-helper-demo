@@ -76,26 +76,26 @@ class Abilities extends Component {
             <FormGroup bsSize="small" controlId="formControlsSelect">
               <ControlLabel>Choose abilities to increment per level.</ControlLabel><br />
               <ControlLabel>Level 4</ControlLabel>
-              <FormControl bsSize="large" componentClass="select" placeholder="select" onChange={e => this.changeValueForLevelXX(e)}>
-                <option key="void" value={0}>-</option>
+              <FormControl id="AbilitiesIncrementLevel__4" bsSize="large" componentClass="select" placeholder="select" onChange={e => this.changeValueForLevelXX(e)}>
+                <option id={`-_4`} key="void" value={0}>-</option>
                 {abilities.length > 0 && abilities.map(ability => (
-                  <option key={ability.name} value={0}>{ability.name}</option>
+                  <option id={`${ability.id}_4`} key={ability.name} value={0}>{ability.name}</option>
                 ))}
               </FormControl>
 
               <ControlLabel>Level 8</ControlLabel>
-              <FormControl bsSize="large" componentClass="select" placeholder="select" onChange={e => this.changeValueForLevelXX(e)}>
-                <option key="void" value={1}>-</option>
+              <FormControl id="AbilitiesIncrementLevel__8" bsSize="large" componentClass="select" placeholder="select" onChange={e => this.changeValueForLevelXX(e)}>
+                <option id={`-_8`} key="void" value={1}>-</option>
                 {abilities.length > 0 && abilities.map(ability => (
-                  <option key={ability.name} value={1}>{ability.name}</option>
+                  <option id={`${ability.id}_8`} key={ability.name} value={1}>{ability.name}</option>
                 ))}
               </FormControl>
 
               <ControlLabel>Level 12</ControlLabel>
-              <FormControl bsSize="large" componentClass="select" placeholder="select" onChange={e => this.changeValueForLevelXX(e)}>
-                <option key="void" value={2}>-</option>
+              <FormControl id="AbilitiesIncrementLevel__12" bsSize="large" componentClass="select" placeholder="select" onChange={e => this.changeValueForLevelXX(e)}>
+                <option id={`-_12`} key="void" value={2}>-</option>
                 {abilities.length > 0 && abilities.map(ability => (
-                  <option key={ability.name} value={2}>{ability.name}</option>
+                  <option id={`${ability.id}_12`} key={ability.name} value={2}>{ability.name}</option>
                 ))}
               </FormControl>
             </FormGroup>

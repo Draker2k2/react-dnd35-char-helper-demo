@@ -68,7 +68,7 @@ function decreaseBonusXX(abilityToIncrement, type, value) {
 }
 
 function decrementAbility(ability, level) {
-  ability.levelValue[level] -= 1;
+  ability.levelValue[level] = 0;
 }
 
 export default function (state = INITIAL_STATE, action) {
@@ -104,7 +104,7 @@ export default function (state = INITIAL_STATE, action) {
 
       const matchedValue2 = state.abilities
         .filter(ability => ability.name === action.payload.id)[0];
-      matchedValue2.levelValue[action.payload.level] += 1;
+      matchedValue2.levelValue[action.payload.level] = 1;
 
       recalculateModsAndBonuses(state);
 

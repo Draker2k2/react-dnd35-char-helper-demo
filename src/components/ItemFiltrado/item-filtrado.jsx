@@ -41,10 +41,10 @@ class ItemFiltrado extends Component {
     }
 
     return (
-      <FormControl bsSize="large" componentClass="select" placeholder="select" onChange={e => this.toggleIncrementFun(e, items)}>
+      <FormControl id={slotToFilter} bsSize="large" componentClass="select" placeholder="select" onChange={e => this.toggleIncrementFun(e, items)}>
         <option key="-" value="-">-</option>
         {items.length > 0 && items.filter(isThisOne).map(item => (
-          <option key={item.id} value={item.id}>{item.id}</option>
+          <option id={item.id} key={item.id} value={item.id}>{item.id}</option>
         ))}
       </FormControl>
     );

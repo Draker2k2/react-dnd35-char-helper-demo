@@ -31,7 +31,7 @@ class ClassFeatures extends Component {
                   ))}
               </Popover>}
           >
-            <p><Button bsStyle="danger" style={wellStyles} active={classFeature.checked} onClick={e => this.toggleIncrementFun(e, classFeature.name, classFeature.checked, classFeature.bonuses)}>
+            <p><Button id={classFeature.id} bsStyle="danger" style={wellStyles} active={classFeature.checked} onClick={e => this.toggleIncrementFun(e, classFeature.name, classFeature.checked, classFeature.bonuses)}>
               <div>
                 {classFeature.name}
               </div>
