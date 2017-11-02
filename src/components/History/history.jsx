@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Col, Row, Panel, FormGroup, Form, FormControl, ControlLabel, Button } from 'react-bootstrap';
+import { Grid, Col, Row, Panel, FormGroup, Form, FormControl, ControlLabel, Button, Modal } from 'react-bootstrap';
+import RichTextEditor from 'react-rte';
 import PropTypes from 'prop-types';
 
 class History extends Component {
@@ -9,14 +10,35 @@ class History extends Component {
       date: '(yyyymmdd)',
       tittle: 'Title',
       description: 'Write here what happened...',
+      showModal: false,
+      value: RichTextEditor.createEmptyValue(),
     };
-    this.handleHistoryInput = this.handleHistoryInput.bind(this);
     this.handleDateInput = this.handleDateInput.bind(this);
     this.handleTittleInput = this.handleTittleInput.bind(this);
     this.handleSubmitMessage = this.handleSubmitMessage.bind(this);
+    this.close = this.close.bind(this);
+    this.open = this.open.bind(this);
+    this.textOnChange = this.textOnChange.bind(this);
   }
   componentDidMount() {
     this.props.getData();
+  }
+  textOnChange = (value) => {
+    this.setState({ value });
+    if (this.props.textOnChange) {
+      // Send the changes up to the parent component as an HTML string.
+      // This is here to demonstrate using `.toString()` but in a real app it
+      // would be better to avoid generating a string on each change.
+      this.props.textOnChange(
+        value.toString('html'),
+      );
+    }
+  };
+  close() {
+    this.setState({ showModal: false });
+  }
+  open() {
+    this.setState({ showModal: true });
   }
   handleDateInput(e) {
     this.setState({ date: e.target.value });
@@ -24,65 +46,83 @@ class History extends Component {
   handleTittleInput(e) {
     this.setState({ tittle: e.target.value });
   }
-  handleHistoryInput(e) {
-    this.setState({ description: e.target.value });
-  }
   handleSubmitMessage() {
     const data = {
       tittle: this.state.tittle,
       date: this.state.date,
-      description: this.state.description,
+      description: this.state.value.toString('html'),
     };
     this.props.addItem(data.date, data.tittle, data.description);
   }
   render() {
     const { history } = this.props;
+    const tittleH1ini = '<h1><strong>';
+    const tittleH1fin = '</strong></h1><br/>';
+    const separacion = '&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;';
     return (
       <div>
         <div>
-          <Grid fluid>
+          <Grid>
             <Row className="show-grid">
-              <Col xs={8} md={8}>
-                <Panel header="History so far..." bsStyle="info" defaultExpanded="true">
-                  { history.map(tale => (<div className="display-linebreak"><strong>{tale.tittle} {tale.date}
-                    {tale.description.split(' ').map(word =>
-                      (word.includes('\\n') ? <span><br /></span> : word.includes('\\t') ? <span>&nbsp;&nbsp;&nbsp;&nbsp;</span> : <span>{ word }&nbsp;</span>))};
-                    <br /></strong></div>))}
-                </Panel>
+              <Col>
+                <Button bsStyle="primary" onClick={this.open}>
+                  [+] Add a new Tale about your jorney, Frederic.
+                </Button>
+                <Modal show={this.state.showModal} onHide={this.close} bsSize="large">
+                  <Modal.Header closeButton>
+                    <Modal.Title>Tell me everything about your tale, Frederic.</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Form horizontal onSubmit={this.handleSubmitMessage}>
+                      <FormGroup controlId="formHorizontalDate">
+                        <Col componentClass={ControlLabel} sm={2}>
+                          Date
+                        </Col>
+                        <Col sm={10}>
+                          <FormControl type="text" placeholder={this.state.date} onChange={this.handleDateInput} />
+                        </Col>
+                      </FormGroup>
+                      <FormGroup controlId="formHorizontalDate">
+                        <Col componentClass={ControlLabel} sm={2}>
+                          Title
+                        </Col>
+                        <Col sm={10}>
+                          <FormControl type="text" placeholder={this.state.tittle} onChange={this.handleTittleInput} />
+                        </Col>
+                      </FormGroup>
+                      <FormGroup controlId="formHorizontalDate">
+                        <Col componentClass={ControlLabel} sm={2} />
+                        <Col sm={10}>
+                          <RichTextEditor
+                            placeholder={this.state.description}
+                            value={this.state.value}
+                            onChange={this.textOnChange}
+                          />
+                        </Col>
+                      </FormGroup>
+                      <FormGroup controlId="formHorizontalDate">
+                        <Col smOffset={2} sm={10}>
+                          <Button type="submit">
+                            Submit
+                          </Button>
+                        </Col>
+                      </FormGroup>
+                    </Form>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button onClick={this.close}>Close</Button>
+                  </Modal.Footer>
+                </Modal>
               </Col>
-              <Col xs={4} md={4}>
-                <Panel header="Tell me new chapters!!" bsStyle="info" defaultExpanded="true">
-                  <Form horizontal onSubmit={this.handleSubmitMessage}>
-                    <FormGroup controlId="formHorizontalDate">
-                      <Col componentClass={ControlLabel} sm={2}>
-                        Date
-                      </Col>
-                      <Col sm={10}>
-                        <FormControl type="text" placeholder={this.state.date} onChange={this.handleDateInput} />
-                      </Col>
-                    </FormGroup>
-                    <FormGroup controlId="formHorizontalDate">
-                      <Col componentClass={ControlLabel} sm={2}>
-                        Title
-                      </Col>
-                      <Col sm={10}>
-                        <FormControl type="text" placeholder={this.state.tittle} onChange={this.handleTittleInput} />
-                      </Col>
-                    </FormGroup>
-                    <FormGroup controlId="formHorizontalDate">
-                      <Col componentClass={ControlLabel} sm={2} />
-                      <Col sm={10}>
-                        <FormControl componentClass="textarea" rows="10" placeholder={this.state.history} onChange={this.handleHistoryInput} />
-                      </Col>
-                    </FormGroup>
-                    <FormGroup controlId="formHorizontalDate">
-                      <Col smOffset={2} sm={10}>
-                        <Button type="submit">
-                          Submit
-                        </Button>
-                      </Col>
-                    </FormGroup>
-                  </Form>
+            </Row>
+            <Row className="show-grid">
+              <Col>
+                <br />
+                <Panel header="History so far..." bsStyle="info" defaultExpanded="true">
+                  <RichTextEditor
+                    readOnly="true"
+                    value={RichTextEditor.createValueFromString(history.map(tale => (tittleH1ini + tale.tittle + separacion + tale.date + tittleH1fin + tale.description)), 'html')}
+                  />
                 </Panel>
               </Col>
             </Row>
@@ -101,6 +141,7 @@ History.propTypes = {
   })).isRequired,
   getData: PropTypes.func.isRequired,
   addItem: PropTypes.func.isRequired,
+  textOnChange: PropTypes.func.isRequired,
 };
 
 export default History;

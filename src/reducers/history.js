@@ -14,7 +14,7 @@ export default function (state = INITIAL_STATE, action) {
 
     //------------------------------------------------------------------------------
     case ACTION_TYPES.FETCH_DATA_SUCCESFULL:
-      return { ...state, history: action.payload, loading: false };
+      return { ...state, history: [...action.payload].sort((a, b) => a.date < b.date), loading: false };
 
     //------------------------------------------------------------------------------
     case ACTION_TYPES.FETCH_DATA_ERROR:

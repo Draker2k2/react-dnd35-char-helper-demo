@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Pablo Darde",
+  "author": "Miguel Ángel Gómez Trillo",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -71,6 +71,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "body-parser": "^1.17.2",
+    "copy-webpack-plugin": "^4.0.1",
     "cors": "^2.8.4",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.2",
@@ -95,12 +96,12 @@
     "react-motion": "^0.5.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
+    "react-rte": "^0.15.0",
     "redux": "^3.7.2",
     "redux-form": "^7.0.1",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
     "styled-components": "^2.1.1",
-    "superagent": "^3.7.0",
-    "copy-webpack-plugin": "^4.0.1"
+    "superagent": "^3.7.0"
   }
 }

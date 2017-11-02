@@ -39,6 +39,13 @@ module.exports = {
         include: /img/,
         loader: 'url'
       },
+      {
+        test: /\.css$/,
+        loaders: [
+          'style-loader',
+          'css-loader?modules'
+        ]
+      },
     ]
   },
 

@@ -7,6 +7,7 @@ const abilitySchema = new mongoose.Schema({
     type: Array,
     default: [
       { type: 'bonus', value: 0 },
+      { type: 'quest', value: 1 },
       { type: 'shield', value: 0 },
       { type: 'dodge', value: 0 },
       { type: 'enhancement', value: 0 },

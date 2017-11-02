@@ -116,6 +116,9 @@ if(window.innerWidth < 1000){
                         <Col>Arms:<ItemsFiltradosContainer slotToFilter={'arms'} /></Col>
                       </Row>
                       <Row className="show-grid">
+                        <Col>Arms:<ItemsFiltradosContainer slotToFilter={'hands'} /></Col>
+                      </Row>
+                      <Row className="show-grid">
                         <Col>Ring(1):<ItemsFiltradosContainer slotToFilter={'ring'} /></Col>
                       </Row>
                       <Row className="show-grid">
@@ -240,7 +243,7 @@ if(window.innerWidth < 1000){
                         <Col xsOffset={2} mdOffset={3} xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                       </Row>
                       <Row className="show-grid">
-                        <Col xsOffset={2} mdOffset={3} xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'arms'} /></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                        <Col xsOffset={2} mdOffset={3} xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'arms'} /></Col><Col xs={2} md={2} /><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'hands'} /></Col>
                       </Row>
                       <Row className="show-grid">
                         <Col xsOffset={2} mdOffset={3} xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'ring'} /></Col><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'waist'} /></Col><Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'ring'} /></Col>
@@ -380,7 +383,7 @@ if(window.innerWidth < 1000){
                               <Col xs={2} md={2} ><p>&nbsp;</p></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
                             </Row>
                             <Row className="show-grid">
-                              <Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'arms'} /></Col><Col xs={2} md={2} /><Col xs={2} md={2} />
+                              <Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'arms'} /></Col><Col xs={2} md={2} /><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'hands'} /></Col>
                             </Row>
                             <Row className="show-grid">
                               <Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'ring'} /></Col><Col xs={2} md={2}><ItemsFiltradosContainer slotToFilter={'waist'} /></Col><Col xs={1} md={2}><ItemsFiltradosContainer slotToFilter={'ring'} /></Col>

@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   staticBonuses: [
       { type: 'weapon', value: 1, from: 'ShortSword +1' },
       { type: 'Dexterity', value: 0, from: 'Dexterity Mod. ShadowBlade Feat' },
+      { type: 'Strengh', value: 0, from: 'Strengh Mod' },
       { type: 'Intelligence', value: 0, from: 'Intelligence Mod. Swashbuckler Class Feature.' },
       { type: 'Burning Blade', value: 0, from: 'Initiator Level. Swordsage Boost.' },
       { type: 'Charge', value: 0, from: 'Charge.' },

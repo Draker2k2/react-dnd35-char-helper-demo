@@ -22,6 +22,7 @@ class Abilities extends Component {
       this.props.skillsMods(constitutionMod, dexterityMod, strenghMod,
       intelligenceMod, charismaMod, wisdomMod),
       this.props.damageExtraStaticBonus(false, 'Dexterity', this.props.dexterityMod),
+      this.props.damageExtraStaticBonus(false, 'Strengh', this.props.strenghMod),
       this.props.damageExtraStaticBonus(false, 'Intelligence', this.props.intelligenceMod),
         <div>
           <table><tr><td>
