@@ -96,7 +96,7 @@ if(window.innerWidth < 1000){
         <Title name="Manus & Dragons - Frederic Character Helper" />
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Overview"><br />
-            <Button onClick={activate()}>
+            <Button onClick={activate}>
               Predefined State
             </Button>
             <Grid fluid>
@@ -384,6 +384,9 @@ if(window.innerWidth < 1000){
         <Title name="Manus & Dragons - Frederic Character Helper" />
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Overview"><br />
+            <Button onClick={activate}>
+              Predefined State
+            </Button>
             <Grid fluid>
               <Row className="show-grid">
                 <Col xs={3} md={3}>
