@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Wrapper from './wrapper';
 import Title from '../../components/Title';
-import { Tabs, Tab, Panel, PanelGroup, Grid, Col, Row, Button } from 'react-bootstrap';
+import { Tabs, Tab, Panel, PanelGroup, Grid, Col, Row, Button, OverlayTrigger, Popover } from 'react-bootstrap';
 import AbilitiesContainer from '../../containers/AbilitiesContainer';
 import DefensesContainer from '../../containers/DefensesContainer';
 import ItemsContainer from '../../containers/ItemsContainer';
@@ -95,10 +95,67 @@ if(window.innerWidth < 1000){
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
         <Title name="Manus & Dragons - Frederic Character Helper" />
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-          <Tab eventKey={1} title="Overview"><br />
-            <Button onClick={activate}>
-              Predefined State
-            </Button>
+          <Tab eventKey={1} title="Overview">
+            <Grid fluid>
+              <Row className="show-grid">
+                <Col>
+                  <Button  bsSize="small" bsStyle="primary" onClick={activate}>
+                    Set PreDefined State
+                  </Button>
+                  &nbsp;
+                  <OverlayTrigger
+                    trigger="click"
+                    placement="right"
+                    overlay={
+                      <Popover id="popover-trigger-click" title="Items to be activated: ">
+                        <p><strong>Abilities: </strong></p>
+                        <p>
+                          <ul>
+                            <li>Level 4: Dexterity</li>
+                            <li>Level 8: Dexterity</li>
+                          </ul>
+                        </p>
+                        <p><strong>Buffs: </strong></p>
+                        <p>
+                          <ul>
+                            <li>ShadowHandStance</li>
+                            <li>ShadowHandDisciplineEnchantment</li>
+                          </ul>
+                        </p>
+                        <p><strong>Class Features: </strong></p>
+                        <p>
+                          <ul>
+                            <li>SwashbucklerGrace</li>
+                            <li>SwordsageWeaponFocus</li>
+                          </ul>
+                        </p>
+                        <p><strong>Items: </strong></p>
+                        <p>
+                          <ul>
+                            <li>Amulet of Tears</li>
+                            <li>CrystalMask of MindArmor</li>
+                            <li>CrystalMask of MindArmor</li>
+                            <li>Nightscale Armor</li>
+                            <li>Rogue Vest</li>
+                            <li>Bracers of Wands</li>
+                            <li>Gloves of the Master Strategist</li>
+                            <li>Belt of Battle</li>
+                            <li>Ring of UMD</li>
+                            <li>Hellforged ShortSword</li>
+                            <li>Boots of Striding of the Giant Killing Style</li>
+                            <li>Animated Shield</li>
+                          </ul>
+                        </p>
+                      </Popover>}
+                  >
+                    <Button  bsSize="xsmall" bsStyle="warning">
+                      ?
+                    </Button>
+                  </OverlayTrigger>
+                </Col>
+              </Row>
+            </Grid>
+            <br />
             <Grid fluid>
               <Row className="show-grid">
                 <Col>
@@ -239,9 +296,67 @@ if(window.innerWidth < 1000){
         <Title name="Manus & Dragons - Frederic Character Helper" />
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Overview"><br />
-            <Button onClick={activate}>
-              Predefined State
-            </Button>
+            <Grid fluid>
+              <Row className="show-grid">
+                <Col>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <Button  bsSize="small" bsStyle="primary" onClick={activate}>
+                    Set PreDefined State
+                  </Button>
+                  &nbsp;
+                  <OverlayTrigger
+                    trigger="click"
+                    placement="right"
+                    overlay={
+                      <Popover id="popover-trigger-click" title="Items to be activated: ">
+                        <p><strong>Abilities: </strong></p>
+                        <p>
+                          <ul>
+                            <li>Level 4: Dexterity</li>
+                            <li>Level 8: Dexterity</li>
+                          </ul>
+                        </p>
+                        <p><strong>Buffs: </strong></p>
+                        <p>
+                          <ul>
+                            <li>ShadowHandStance</li>
+                            <li>ShadowHandDisciplineEnchantment</li>
+                          </ul>
+                        </p>
+                        <p><strong>Class Features: </strong></p>
+                        <p>
+                          <ul>
+                            <li>SwashbucklerGrace</li>
+                            <li>SwordsageWeaponFocus</li>
+                          </ul>
+                        </p>
+                        <p><strong>Items: </strong></p>
+                        <p>
+                          <ul>
+                            <li>Amulet of Tears</li>
+                            <li>CrystalMask of MindArmor</li>
+                            <li>CrystalMask of MindArmor</li>
+                            <li>Nightscale Armor</li>
+                            <li>Rogue Vest</li>
+                            <li>Bracers of Wands</li>
+                            <li>Gloves of the Master Strategist</li>
+                            <li>Belt of Battle</li>
+                            <li>Ring of UMD</li>
+                            <li>Hellforged ShortSword</li>
+                            <li>Boots of Striding of the Giant Killing Style</li>
+                            <li>Animated Shield</li>
+                          </ul>
+                        </p>
+                      </Popover>}
+                  >
+                    <Button  bsSize="xsmall" bsStyle="warning">
+                      ?
+                    </Button>
+                  </OverlayTrigger>
+                </Col>
+              </Row>
+            </Grid>
+            <br />
             <Grid fluid>
               <Row className="show-grid">
                 <Col xs={5} md={6}>
@@ -384,9 +499,67 @@ if(window.innerWidth < 1000){
         <Title name="Manus & Dragons - Frederic Character Helper" />
         <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
           <Tab eventKey={1} title="Overview"><br />
-            <Button onClick={activate}>
-              Predefined State
-            </Button>
+            <Grid fluid>
+              <Row className="show-grid">
+                <Col>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <Button  bsSize="small" bsStyle="primary" onClick={activate}>
+                    Set PreDefined State
+                  </Button>
+                  &nbsp;
+                  <OverlayTrigger
+                    trigger="click"
+                    placement="right"
+                    overlay={
+                      <Popover id="popover-trigger-click" title="Items to be activated: ">
+                        <p><strong>Abilities: </strong></p>
+                        <p>
+                          <ul>
+                            <li>Level 4: Dexterity</li>
+                            <li>Level 8: Dexterity</li>
+                          </ul>
+                        </p>
+                        <p><strong>Buffs: </strong></p>
+                        <p>
+                          <ul>
+                            <li>ShadowHandStance</li>
+                            <li>ShadowHandDisciplineEnchantment</li>
+                          </ul>
+                        </p>
+                        <p><strong>Class Features: </strong></p>
+                        <p>
+                          <ul>
+                            <li>SwashbucklerGrace</li>
+                            <li>SwordsageWeaponFocus</li>
+                          </ul>
+                        </p>
+                        <p><strong>Items: </strong></p>
+                        <p>
+                          <ul>
+                            <li>Amulet of Tears</li>
+                            <li>CrystalMask of MindArmor</li>
+                            <li>CrystalMask of MindArmor</li>
+                            <li>Nightscale Armor</li>
+                            <li>Rogue Vest</li>
+                            <li>Bracers of Wands</li>
+                            <li>Gloves of the Master Strategist</li>
+                            <li>Belt of Battle</li>
+                            <li>Ring of UMD</li>
+                            <li>Hellforged ShortSword</li>
+                            <li>Boots of Striding of the Giant Killing Style</li>
+                            <li>Animated Shield</li>
+                          </ul>
+                        </p>
+                      </Popover>}
+                  >
+                    <Button  bsSize="xsmall" bsStyle="warning">
+                      ?
+                    </Button>
+                  </OverlayTrigger>
+                </Col>
+              </Row>
+            </Grid>
+            <br />
             <Grid fluid>
               <Row className="show-grid">
                 <Col xs={3} md={3}>
