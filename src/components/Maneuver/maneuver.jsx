@@ -31,7 +31,7 @@ class Maneuver extends Component {
               <Nav bsStyle="pills" stacked>
                  {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.action === 'boost')).map(maneuver => (
                   <NavItem eventKey={maneuver.id} checked={maneuver.checked} onClick={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
-                    <Label bsSize="xsmall" bsStyle="info">SwordSage</Label><br />
+                    <Label bsSize="xsmall" bsStyle="info">SwordSage</Label> <Label bsStyle="danger">{maneuver.checked ? ' MANUEVER ACTIVE ' : false}</Label>
                     <h4>{maneuver.name}</h4>
                   </NavItem>
                  ))}
