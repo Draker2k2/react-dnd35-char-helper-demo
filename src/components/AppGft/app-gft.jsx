@@ -28,12 +28,14 @@ function activate() {
   level8.options[2].selected = true;
   level8.dispatchEvent(event_2);
 
-  // --- FEATS & CLASS FEATURES SLOTS ACTIVATION
+  // --- FEATS & CLASS FEATURES ACTIVATION
   document.getElementById('SwashbucklerGrace').click();
   document.getElementById('SwordsageWeaponFocus').click();
-  document.getElementById('ShadowHandStance').click();
   document.getElementById('ShadowHandDisciplineEnchantment').click();
   
+  // --- STANCES ACTIVATION
+  document.getElementById('IslandOfBlades').click();
+
   // --- GEAR SLOTS ACTIVATION
   const event = new Event('change', { bubbles: true });
 
@@ -116,10 +118,10 @@ if(window.innerWidth < 1000){
                             <li>Level 8: Dexterity</li>
                           </ul>
                         </p>
-                        <p><strong>Buffs: </strong></p>
+                        <p><strong>Buffs & Stances: </strong></p>
                         <p>
                           <ul>
-                            <li>ShadowHandStance</li>
+                            <li>Island of Blades Stance</li>
                             <li>ShadowHandDisciplineEnchantment</li>
                           </ul>
                         </p>
@@ -315,10 +317,10 @@ if(window.innerWidth < 1000){
                             <li>Level 8: Dexterity</li>
                           </ul>
                         </p>
-                        <p><strong>Buffs: </strong></p>
+                        <p><strong>Buffs & Stances: </strong></p>
                         <p>
                           <ul>
-                            <li>ShadowHandStance</li>
+                            <li>Island of Blades Stance</li>
                             <li>ShadowHandDisciplineEnchantment</li>
                           </ul>
                         </p>
@@ -516,10 +518,10 @@ if(window.innerWidth < 1000){
                             <li>Level 8: Dexterity</li>
                           </ul>
                         </p>
-                        <p><strong>Buffs: </strong></p>
+                        <p><strong>Buffs & Stances: </strong></p>
                         <p>
                           <ul>
-                            <li>ShadowHandStance</li>
+                            <li>Island of Blades Stance</li>
                             <li>ShadowHandDisciplineEnchantment</li>
                           </ul>
                         </p>

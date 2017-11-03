@@ -8,6 +8,7 @@ const INITIAL_STATE = {
       { type: 'Intelligence', value: 0, from: 'Intelligence Mod. Swashbuckler Class Feature.' },
       { type: 'Burning Blade', value: 0, from: 'Initiator Level. Swordsage Boost.' },
       { type: 'Charge', value: 0, from: 'Charge.' },
+      { type: 'Giant Killing Style Stance', value: 0, from: 'Giant Killing Style Stance' },
   ],
   dicesBonuses: [
     { type: 'Weapon', value: 1, from: 'ShortSword +1' },

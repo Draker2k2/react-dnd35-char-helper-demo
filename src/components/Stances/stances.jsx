@@ -16,7 +16,7 @@ class Stances extends Component {
       (bonus.subTarget === 'Hit' ? this.props.hitIncrement(checked, bonus.type, bonus.value) : '') ||
       (bonus.subTarget === 'Rolls' && checked === false ? this.props.hitExtraAttack(name, bonus.value) : '') ||
       (bonus.subTarget === 'Rolls' && checked === true ? this.props.removeExtraAttack(name, bonus.value) : '') ||
-      (bonus.target === 'Damage' && bonus.subTarget !== 'Dices' ? this.props.damageExtraStaticBonus(checked, name, bonus.value) : '') ||
+      (bonus.target === 'Damage' && bonus.subTarget !== 'Dices' ? this.props.damageExtraStaticBonus(checked, bonus.type, bonus.value) : '') ||
       (bonus.target === 'Damage' && bonus.subTarget === 'Dices' ? this.props.damageExtraDicesBonus(checked, name, bonus.value) : '')
     ));
   }
