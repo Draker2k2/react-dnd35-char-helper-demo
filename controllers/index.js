@@ -11,5 +11,6 @@ router.use('/feats', require('./feats'));
 router.use('/classFeatures', require('./classFeatures'));
 router.use('/history', require('./history'));
 router.use('/stances', require('./stances'));
+router.use('/maneuvers', require('./maneuvers'));
 
 module.exports = router;

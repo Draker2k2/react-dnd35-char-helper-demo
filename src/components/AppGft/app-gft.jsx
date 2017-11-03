@@ -5,7 +5,7 @@ import Title from '../../components/Title';
 import { Tabs, Tab, Panel, PanelGroup, Grid, Col, Row, Button, OverlayTrigger, Popover, Glyphicon } from 'react-bootstrap';
 import AbilitiesContainer from '../../containers/AbilitiesContainer';
 import DefensesContainer from '../../containers/DefensesContainer';
-import ItemsContainer from '../../containers/ItemsContainer';
+import ManeuversContainer from '../../containers/ManeuversContainer';
 import ItemsFiltradosContainer from '../../containers/ItemsFiltradosContainer';
 import SkillsContainer from '../../containers/SkillsContainer';
 import HitContainer from '../../containers/HitContainer';
@@ -486,6 +486,9 @@ if(window.innerWidth < 1000){
           <Tab eventKey={5} title="History"><br />
             <HistoryContainer />
           </Tab>
+          <Tab eventKey={6} title="Maneuvers"><br />
+            <ManeuversContainer />
+          </Tab>
         </Tabs>
       </Wrapper>
     </BrowserRouter>
@@ -687,6 +690,9 @@ if(window.innerWidth < 1000){
           </Tab>
           <Tab eventKey={2} title="History"><br />
             <HistoryContainer />
+          </Tab>
+          <Tab eventKey={3} title="Maneuvers"><br />
+            <ManeuversContainer />
           </Tab>
         </Tabs>
       </Wrapper>
