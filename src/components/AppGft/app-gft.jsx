@@ -14,6 +14,7 @@ import BuffContainer from '../../containers/BuffContainer';
 import ClassFeaturesContainer from '../../containers/ClassFeaturesContainer';
 import FeatsContainer from '../../containers/FeatsContainer';
 import HistoryContainer from '../../containers/HistoryContainer';
+import StancesContainer from '../../containers/StancesContainer';
 
 var AppGFT = "";
 function activate() {
@@ -187,6 +188,9 @@ if(window.innerWidth < 1000){
                 <div className="content3">
                   <Panel collapsible header="Buffs" bsStyle="info" defaultExpanded="true">
                     <BuffContainer />
+                  </Panel>
+                  <Panel collapsible header="Stances" bsStyle="info" defaultExpanded="true">
+                    <StancesContainer />
                   </Panel>
                   <Panel collapsible header="Feats" bsStyle="info" defaultExpanded="true">
                     <FeatsContainer />
@@ -379,6 +383,9 @@ if(window.innerWidth < 1000){
                       <div className="content3">
                         <Panel collapsible header="Buffs" bsStyle="info" defaultExpanded="true">
                           <BuffContainer />
+                        </Panel>
+                        <Panel collapsible header="Stances" bsStyle="info" defaultExpanded="true">
+                          <StancesContainer />
                         </Panel>
                         <Panel collapsible header="Feats" bsStyle="info" defaultExpanded="true">
                           <FeatsContainer />
@@ -592,6 +599,9 @@ if(window.innerWidth < 1000){
                         <PanelGroup>
                           <Panel collapsible header="Buffs" bsStyle="info" defaultExpanded="true">
                             <BuffContainer />
+                          </Panel>
+                          <Panel collapsible header="Stances" bsStyle="info" defaultExpanded="true">
+                            <StancesContainer />
                           </Panel>
                           <Panel collapsible header="Feats" bsStyle="info" defaultExpanded="true">
                             <FeatsContainer />
