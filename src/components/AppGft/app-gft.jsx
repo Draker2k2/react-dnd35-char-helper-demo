@@ -102,6 +102,7 @@ if(window.innerWidth < 1000){
             <Grid fluid>
               <Row className="show-grid">
                 <Col>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
                   <Button  bsSize="small" bsStyle="primary" onClick={activate}>
                     Set PreDefined State
                   </Button>
