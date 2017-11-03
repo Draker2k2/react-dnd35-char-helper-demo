@@ -286,6 +286,9 @@ if(window.innerWidth < 1000){
           <Tab eventKey={7} title="History"><br />
             <HistoryContainer />
           </Tab>
+          <Tab eventKey={8} title="Maneuvers"><br />
+            <ManeuversContainer />
+          </Tab>
         </Tabs>
       </Wrapper>
     </BrowserRouter>

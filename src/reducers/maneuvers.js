@@ -11,7 +11,7 @@ export default function (state = INITIAL_STATE, action) {
     case ACTION_TYPES.FETCH_DATA:
       return { ...state, loading: true };
     case ACTION_TYPES.FETCH_DATA_SUCCESFULL:
-      return { ...state, maneuvers: action.payload, loading: false };
+      return { ...state, maneuvers: [...action.payload].sort((a, b) => a.name > b.name), loading: false };
     case ACTION_TYPES.FETCH_DATA_ERROR:
       return { ...state, loading: false, error: action.payload };
     case ACTION_TYPES.TOGGLE: {

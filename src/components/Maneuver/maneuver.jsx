@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Tab, Row, Col, Nav, NavItem, Panel, Label } from 'react-bootstrap';
+import RichTextEditor from 'react-rte';
 
 class Maneuver extends Component {
   componentDidMount() {
@@ -31,7 +32,10 @@ class Maneuver extends Component {
               <Nav bsStyle="pills" stacked>
                  {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.action === 'boost')).map(maneuver => (
                   <NavItem eventKey={maneuver.id} checked={maneuver.checked} onClick={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
-                    <Label bsSize="xsmall" bsStyle="info">SwordSage</Label> <Label bsStyle="danger">{maneuver.checked ? ' MANUEVER ACTIVE ' : false}</Label>
+                    {maneuver.class === 'SwordSage' ? <Label bsSize="xsmall" bsStyle="info">SwordSage</Label> : false}
+                    {maneuver.class === 'WarBlade' ? <Label bsSize="xsmall" bsStyle="success">WarBlade</Label> : false}
+                    {maneuver.class === 'Crusader' ? <Label bsSize="xsmall" bsStyle="warning">Crusader</Label> : false}
+                     <Label bsStyle="danger">{maneuver.checked ? ' MANUEVER ACTIVE ' : false}</Label>
                     <h4>{maneuver.name}</h4>
                   </NavItem>
                  ))}
@@ -41,7 +45,10 @@ class Maneuver extends Component {
               <Tab.Content animation>
                  {maneuvers.length > 0 && maneuvers.map(maneuver => (
                   <Tab.Pane eventKey={maneuver.id}>
-                    {maneuver.description}
+                    <RichTextEditor
+                    readOnly="true"
+                    value={RichTextEditor.createValueFromString(maneuver.description, 'html')}
+                    />
                   </Tab.Pane>
                  ))}
               </Tab.Content>
@@ -56,8 +63,12 @@ class Maneuver extends Component {
             <Col sm={2}>
               <Nav bsStyle="pills" stacked>
                  {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.action === 'strike')).map(maneuver => (
-                  <NavItem eventKey={maneuver.id} checked={maneuver.checked} onSelect={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
-                    {maneuver.name}
+                  <NavItem eventKey={maneuver.id} checked={maneuver.checked} onClick={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
+                    {maneuver.class === 'SwordSage' ? <Label bsSize="xsmall" bsStyle="info">SwordSage</Label> : false}
+                    {maneuver.class === 'WarBlade' ? <Label bsSize="xsmall" bsStyle="success">WarBlade</Label> : false}
+                    {maneuver.class === 'Crusader' ? <Label bsSize="xsmall" bsStyle="warning">Crusader</Label> : false}
+                     <Label bsStyle="danger">{maneuver.checked ? ' MANUEVER ACTIVE ' : false}</Label>
+                    <h4>{maneuver.name}</h4>
                   </NavItem>
                  ))}
               </Nav>
@@ -66,7 +77,10 @@ class Maneuver extends Component {
               <Tab.Content animation>
                  {maneuvers.length > 0 && maneuvers.map(maneuver => (
                   <Tab.Pane eventKey={maneuver.id}>
-                    {maneuver.description}
+                    <RichTextEditor
+                    readOnly="true"
+                    value={RichTextEditor.createValueFromString(maneuver.description, 'html')}
+                    />
                   </Tab.Pane>
                  ))}
               </Tab.Content>
@@ -81,8 +95,12 @@ class Maneuver extends Component {
             <Col sm={2}>
               <Nav bsStyle="pills" stacked>
                  {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.action === 'counter')).map(maneuver => (
-                  <NavItem eventKey={maneuver.id} checked={maneuver.checked} onSelect={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
-                    {maneuver.name}
+                  <NavItem eventKey={maneuver.id} checked={maneuver.checked} onClick={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
+                    {maneuver.class === 'SwordSage' ? <Label bsSize="xsmall" bsStyle="info">SwordSage</Label> : false}
+                    {maneuver.class === 'WarBlade' ? <Label bsSize="xsmall" bsStyle="success">WarBlade</Label> : false}
+                    {maneuver.class === 'Crusader' ? <Label bsSize="xsmall" bsStyle="warning">Crusader</Label> : false}
+                     <Label bsStyle="danger">{maneuver.checked ? ' MANUEVER ACTIVE ' : false}</Label>
+                    <h4>{maneuver.name}</h4>
                   </NavItem>
                  ))}
               </Nav>
@@ -91,7 +109,10 @@ class Maneuver extends Component {
               <Tab.Content animation>
                  {maneuvers.length > 0 && maneuvers.map(maneuver => (
                   <Tab.Pane eventKey={maneuver.id}>
-                    {maneuver.description}
+                    <RichTextEditor
+                    readOnly="true"
+                    value={RichTextEditor.createValueFromString(maneuver.description, 'html')}
+                    />
                   </Tab.Pane>
                  ))}
               </Tab.Content>
