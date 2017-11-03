@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Tab, Row, Col, Nav, NavItem, Panel, Label } from 'react-bootstrap';
+import { Tab, Row, Col, Nav, NavItem, Panel, Label, Glyphicon } from 'react-bootstrap';
 import RichTextEditor from 'react-rte';
 
 class Maneuver extends Component {
@@ -35,7 +35,8 @@ class Maneuver extends Component {
                     {maneuver.class === 'SwordSage' ? <Label bsSize="xsmall" bsStyle="info">SwordSage</Label> : false}
                     {maneuver.class === 'WarBlade' ? <Label bsSize="xsmall" bsStyle="success">WarBlade</Label> : false}
                     {maneuver.class === 'Crusader' ? <Label bsSize="xsmall" bsStyle="warning">Crusader</Label> : false}
-                     <Label bsStyle="danger">{maneuver.checked ? ' MANUEVER ACTIVE ' : false}</Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <Label bsStyle="danger">{maneuver.checked ? <Glyphicon glyph="check" /> : false}{maneuver.checked ? ' Maneuver ACTIVE' : false}</Label>
                     <h4>{maneuver.name}</h4>
                   </NavItem>
                  ))}
