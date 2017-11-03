@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Wrapper from './wrapper';
 import Title from '../../components/Title';
-import { Tabs, Tab, Panel, PanelGroup, Grid, Col, Row, Button, OverlayTrigger, Popover } from 'react-bootstrap';
+import { Tabs, Tab, Panel, PanelGroup, Grid, Col, Row, Button, OverlayTrigger, Popover, Glyphicon } from 'react-bootstrap';
 import AbilitiesContainer from '../../containers/AbilitiesContainer';
 import DefensesContainer from '../../containers/DefensesContainer';
 import ItemsContainer from '../../containers/ItemsContainer';
@@ -24,7 +24,7 @@ function activate() {
   level4.dispatchEvent(event_2);
 
   const level8 = document.getElementById('AbilitiesIncrementLevel__8');
-  level8.options[4].selected = true;
+  level8.options[2].selected = true;
   level8.dispatchEvent(event_2);
 
   // --- FEATS & CLASS FEATURES SLOTS ACTIVATION
@@ -148,8 +148,8 @@ if(window.innerWidth < 1000){
                         </p>
                       </Popover>}
                   >
-                    <Button  bsSize="xsmall" bsStyle="warning">
-                      ?
+                    <Button  bsSize="small" bsStyle="warning">
+                      <Glyphicon glyph="info-sign" />
                     </Button>
                   </OverlayTrigger>
                 </Col>
@@ -276,11 +276,6 @@ if(window.innerWidth < 1000){
               </table>
             </Panel>
           </Tab>
-          <Tab eventKey={6} title="Item List">
-            <Panel collapsible header="Items" bsStyle="info" defaultExpanded="true">
-              <ItemsContainer />
-            </Panel>
-          </Tab>
           <Tab eventKey={7} title="History"><br />
             <HistoryContainer />
           </Tab>
@@ -349,8 +344,8 @@ if(window.innerWidth < 1000){
                         </p>
                       </Popover>}
                   >
-                    <Button  bsSize="xsmall" bsStyle="warning">
-                      ?
+                    <Button  bsSize="small" bsStyle="warning">
+                      <Glyphicon glyph="info-sign" />
                     </Button>
                   </OverlayTrigger>
                 </Col>
@@ -479,11 +474,6 @@ if(window.innerWidth < 1000){
               </table>
             </Panel>
           </Tab>
-          <Tab eventKey={4} title="Item List">
-            <Panel collapsible header="Items" bsStyle="info" defaultExpanded="true">
-              <ItemsContainer />
-            </Panel>
-          </Tab>
           <Tab eventKey={5} title="History"><br />
             <HistoryContainer />
           </Tab>
@@ -552,8 +542,8 @@ if(window.innerWidth < 1000){
                         </p>
                       </Popover>}
                   >
-                    <Button  bsSize="xsmall" bsStyle="warning">
-                      ?
+                    <Button  bsSize="small" bsStyle="warning">
+                      <Glyphicon glyph="info-sign" />
                     </Button>
                   </OverlayTrigger>
                 </Col>
@@ -679,19 +669,6 @@ if(window.innerWidth < 1000){
                       </tr>
                     </table>
                   </Panel>
-                </Col>
-              </Row>
-              <Row className="show-grid">
-                <Col xs={14} md={14}>
-                  <Switch>
-                    <Route path="/">
-                      <div className="content2">
-                        <Panel collapsible header="Items" bsStyle="info" defaultExpanded="true">
-                          <ItemsContainer />
-                        </Panel>
-                      </div>
-                    </Route>
-                  </Switch>
                 </Col>
               </Row>
             </Grid>

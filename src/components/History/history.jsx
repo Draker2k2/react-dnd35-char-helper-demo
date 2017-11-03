@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Col, Row, Panel, FormGroup, Form, FormControl, ControlLabel, Button, Modal } from 'react-bootstrap';
+import { Grid, Col, Row, Panel, FormGroup, Form, FormControl, ControlLabel, Button, Modal, Glyphicon } from 'react-bootstrap';
 import RichTextEditor from 'react-rte';
 import PropTypes from 'prop-types';
 
@@ -66,7 +66,7 @@ class History extends Component {
             <Row className="show-grid">
               <Col>
                 <Button bsStyle="primary" onClick={this.open}>
-                  [+] Add a new Tale about your jorney, Frederic.
+                  <Glyphicon glyph="book" /> &nbsp; Add a new Tale about your jorney, Frederic.
                 </Button>
                 <Modal show={this.state.showModal} onHide={this.close} bsSize="large">
                   <Modal.Header closeButton>
