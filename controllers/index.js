@@ -12,5 +12,6 @@ router.use('/classFeatures', require('./classFeatures'));
 router.use('/history', require('./history'));
 router.use('/stances', require('./stances'));
 router.use('/maneuvers', require('./maneuvers'));
+router.use('/misions', require('./misions'));
 
 module.exports = router;

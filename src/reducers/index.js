@@ -12,6 +12,7 @@ import classFeaturesReducer from './classFeatures';
 import historyReducer from './history';
 import stancesReducer from './stances';
 import maneuversReducer from './maneuvers';
+import misionsReducer from './misions';
 
 const rootReducer = combineReducers({
   state: (state = {}) => state,
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
   history: historyReducer,
   stances: stancesReducer,
   maneuvers: maneuversReducer,
+  misions: misionsReducer,
 });
 
 export default rootReducer;

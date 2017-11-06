@@ -15,6 +15,7 @@ import ClassFeaturesContainer from '../../containers/ClassFeaturesContainer';
 import FeatsContainer from '../../containers/FeatsContainer';
 import HistoryContainer from '../../containers/HistoryContainer';
 import StancesContainer from '../../containers/StancesContainer';
+import MisionsContainer from '../../containers/MisionsContainer';
 
 var AppGFT = "";
 function activate() {
@@ -488,6 +489,7 @@ if(window.innerWidth < 1000){
             </Panel>
           </Tab>
           <Tab eventKey={5} title="History"><br />
+            <MisionsContainer />
             <HistoryContainer />
           </Tab>
           <Tab eventKey={6} title="Maneuvers"><br />

@@ -11,7 +11,7 @@ class Hit extends Component {
       <div>
         <OverlayTrigger
           trigger="hover"
-          placement="right"
+          placement="top"
           overlay={
             <Popover id="popover-trigger-hover" title="Single Attack Hit Detail">
               <Well>
@@ -27,7 +27,7 @@ class Hit extends Component {
         </OverlayTrigger>
         <OverlayTrigger
           trigger="hover"
-          placement="right"
+          placement="top"
           overlay={
             <Popover id="popover-trigger-hover" title="Single Attack Hit Detail vs Undead">
               <Well>
