@@ -30,13 +30,13 @@ class Maneuver extends Component {
           <Row className="clearfix">
             <Col sm={2}>
               <Nav bsStyle="pills" stacked>
-                 {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.action === 'boost')).map(maneuver => (
+                 {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.type === 'Boost')).map(maneuver => (
                   <NavItem eventKey={maneuver.id} checked={maneuver.checked} onClick={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
                     {maneuver.class === 'SwordSage' ? <Label bsSize="xsmall" bsStyle="info">SwordSage</Label> : false}
                     {maneuver.class === 'WarBlade' ? <Label bsSize="xsmall" bsStyle="success">WarBlade</Label> : false}
                     {maneuver.class === 'Crusader' ? <Label bsSize="xsmall" bsStyle="warning">Crusader</Label> : false}
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <Label bsStyle="danger">{maneuver.checked ? <Glyphicon glyph="check" /> : false}{maneuver.checked ? ' Maneuver ACTIVE' : false}</Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <Label bsStyle="danger">{maneuver.checked ? <Glyphicon glyph="check" /> : false}{maneuver.checked ? ' ACTIVE' : false}</Label>
                     <h4>{maneuver.name}</h4>
                   </NavItem>
                  ))}
@@ -46,6 +46,8 @@ class Maneuver extends Component {
               <Tab.Content animation>
                  {maneuvers.length > 0 && maneuvers.map(maneuver => (
                   <Tab.Pane eventKey={maneuver.id}>
+                    <Label bsSize="xsmall" bsStyle="success">{maneuver.action} Action</Label>&nbsp;
+                    <Label bsSize="xsmall" bsStyle="warning">{maneuver.discipline}</Label>
                     <RichTextEditor
                     readOnly="true"
                     value={RichTextEditor.createValueFromString(maneuver.description, 'html')}
@@ -63,12 +65,13 @@ class Maneuver extends Component {
           <Row className="clearfix">
             <Col sm={2}>
               <Nav bsStyle="pills" stacked>
-                 {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.action === 'strike')).map(maneuver => (
+                 {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.type === 'Strike')).map(maneuver => (
                   <NavItem eventKey={maneuver.id} checked={maneuver.checked} onClick={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
                     {maneuver.class === 'SwordSage' ? <Label bsSize="xsmall" bsStyle="info">SwordSage</Label> : false}
                     {maneuver.class === 'WarBlade' ? <Label bsSize="xsmall" bsStyle="success">WarBlade</Label> : false}
                     {maneuver.class === 'Crusader' ? <Label bsSize="xsmall" bsStyle="warning">Crusader</Label> : false}
-                     <Label bsStyle="danger">{maneuver.checked ? ' MANUEVER ACTIVE ' : false}</Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <Label bsStyle="danger">{maneuver.checked ? <Glyphicon glyph="check" /> : false}{maneuver.checked ? ' ACTIVE' : false}</Label>
                     <h4>{maneuver.name}</h4>
                   </NavItem>
                  ))}
@@ -78,6 +81,8 @@ class Maneuver extends Component {
               <Tab.Content animation>
                  {maneuvers.length > 0 && maneuvers.map(maneuver => (
                   <Tab.Pane eventKey={maneuver.id}>
+                    <Label bsSize="xsmall" bsStyle="success">{maneuver.action} Action</Label>&nbsp;
+                    <Label bsSize="xsmall" bsStyle="warning">{maneuver.discipline}</Label>
                     <RichTextEditor
                     readOnly="true"
                     value={RichTextEditor.createValueFromString(maneuver.description, 'html')}
@@ -95,12 +100,13 @@ class Maneuver extends Component {
           <Row className="clearfix">
             <Col sm={2}>
               <Nav bsStyle="pills" stacked>
-                 {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.action === 'counter')).map(maneuver => (
+                 {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.type === 'Counter')).map(maneuver => (
                   <NavItem eventKey={maneuver.id} checked={maneuver.checked} onClick={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
                     {maneuver.class === 'SwordSage' ? <Label bsSize="xsmall" bsStyle="info">SwordSage</Label> : false}
                     {maneuver.class === 'WarBlade' ? <Label bsSize="xsmall" bsStyle="success">WarBlade</Label> : false}
                     {maneuver.class === 'Crusader' ? <Label bsSize="xsmall" bsStyle="warning">Crusader</Label> : false}
-                     <Label bsStyle="danger">{maneuver.checked ? ' MANUEVER ACTIVE ' : false}</Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <Label bsStyle="danger">{maneuver.checked ? <Glyphicon glyph="check" /> : false}{maneuver.checked ? ' ACTIVE' : false}</Label>
                     <h4>{maneuver.name}</h4>
                   </NavItem>
                  ))}
@@ -110,6 +116,8 @@ class Maneuver extends Component {
               <Tab.Content animation>
                  {maneuvers.length > 0 && maneuvers.map(maneuver => (
                   <Tab.Pane eventKey={maneuver.id}>
+                    <Label bsSize="xsmall" bsStyle="success">{maneuver.action} Action</Label>&nbsp;
+                    <Label bsSize="xsmall" bsStyle="warning">{maneuver.discipline}</Label>
                     <RichTextEditor
                     readOnly="true"
                     value={RichTextEditor.createValueFromString(maneuver.description, 'html')}
