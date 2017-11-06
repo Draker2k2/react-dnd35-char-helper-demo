@@ -28,7 +28,7 @@ class Maneuver extends Component {
         <Panel collapsible header="Boosts" bsStyle="success" defaultExpanded="true">
         <Tab.Container id="maneuvers-tabs" defaultActiveKey="first">
           <Row className="clearfix">
-            <Col sm={2}>
+            <Col  xs={2} sm={2} md={4}>
               <Nav bsStyle="pills" stacked>
                  {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.type === 'Boost')).map(maneuver => (
                   <NavItem eventKey={maneuver.id} checked={maneuver.checked} onClick={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
@@ -42,7 +42,7 @@ class Maneuver extends Component {
                  ))}
               </Nav>
             </Col>
-            <Col sm={4}>
+            <Col xs={4} sm={4} md={6}>
               <Tab.Content animation>
                  {maneuvers.length > 0 && maneuvers.map(maneuver => (
                   <Tab.Pane eventKey={maneuver.id}>
@@ -63,7 +63,7 @@ class Maneuver extends Component {
         <Panel collapsible header="Strikes" bsStyle="danger">
         <Tab.Container id="maneuvers-tabs" defaultActiveKey="first">
           <Row className="clearfix">
-            <Col sm={2}>
+            <Col xs={2} sm={2} md={4}>
               <Nav bsStyle="pills" stacked>
                  {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.type === 'Strike')).map(maneuver => (
                   <NavItem eventKey={maneuver.id} checked={maneuver.checked} onClick={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
@@ -77,7 +77,7 @@ class Maneuver extends Component {
                  ))}
               </Nav>
             </Col>
-            <Col sm={4}>
+            <Col xs={2} sm={4} md={6}>
               <Tab.Content animation>
                  {maneuvers.length > 0 && maneuvers.map(maneuver => (
                   <Tab.Pane eventKey={maneuver.id}>
@@ -98,7 +98,7 @@ class Maneuver extends Component {
         <Panel collapsible header="Counters" bsStyle="warning">
         <Tab.Container id="maneuvers-tabs" defaultActiveKey="first">
           <Row className="clearfix">
-            <Col sm={2}>
+            <Col xs={2} sm={2} md={4}>
               <Nav bsStyle="pills" stacked>
                  {maneuvers.length > 0 && maneuvers.filter(maneuv => (maneuv.type === 'Counter')).map(maneuver => (
                   <NavItem eventKey={maneuver.id} checked={maneuver.checked} onClick={e => this.toggleIncrementFun(e, maneuver.name, maneuver.checked, maneuver.bonuses)}>
@@ -112,7 +112,7 @@ class Maneuver extends Component {
                  ))}
               </Nav>
             </Col>
-            <Col sm={4}>
+            <Col  xs={4} sm={4} md={6}>
               <Tab.Content animation>
                  {maneuvers.length > 0 && maneuvers.map(maneuver => (
                   <Tab.Pane eventKey={maneuver.id}>

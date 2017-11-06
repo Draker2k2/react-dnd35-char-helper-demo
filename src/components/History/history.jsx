@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Col, Row, Panel, FormGroup, Form, FormControl, ControlLabel, Button, Modal, Glyphicon } from 'react-bootstrap';
+import { Grid, Col, Tab, Nav, NavItem, Row, Panel, FormGroup, Form, FormControl, ControlLabel, Button, Modal, Glyphicon, Label } from 'react-bootstrap';
 import RichTextEditor from 'react-rte';
 import PropTypes from 'prop-types';
 
@@ -56,8 +56,8 @@ class History extends Component {
   }
   render() {
     const { history } = this.props;
-    const tittleH1ini = '<h1><strong>';
-    const tittleH1fin = '</strong></h1><br/>';
+    const tittleH1ini = '<strong>';
+    const tittleH1fin = '</strong><br/>';
     const separacion = '&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;';
     return (
       <div>
@@ -119,10 +119,34 @@ class History extends Component {
               <Col>
                 <br />
                 <Panel header="History so far..." bsStyle="info" defaultExpanded="true">
-                  <RichTextEditor
-                    readOnly="true"
-                    value={RichTextEditor.createValueFromString(history.map(tale => (tittleH1ini + tale.tittle + separacion + tale.date + tittleH1fin + tale.description)), 'html')}
-                  />
+                  <Tab.Container id="misions-tabs" defaultActiveKey="first">
+                    <Grid fluid>
+                      <Row className="clearfix">
+                        <Col sm={3}>
+                          <Nav bsStyle="pills" stacked>
+                            {history.length > 0 && history.map(hist => (
+                              <NavItem eventKey={hist.tittle}>
+                                <Label bsSize="xsmall" bsStyle="info">{hist.date}</Label><br />
+                                {hist.tittle}
+                              </NavItem>
+                            ))}
+                          </Nav>
+                        </Col>
+                        <Col sm={8}>
+                          <Tab.Content animation>
+                            {history.length > 0 && history.map(tale => (
+                              <Tab.Pane eventKey={tale.tittle}>
+                                <RichTextEditor
+                                  readOnly="true"
+                                  value={RichTextEditor.createValueFromString(tale.description, 'html')}
+                                />
+                              </Tab.Pane>
+                            ))}
+                          </Tab.Content>
+                        </Col>
+                      </Row>
+                    </Grid>
+                  </Tab.Container>
                 </Panel>
               </Col>
             </Row>

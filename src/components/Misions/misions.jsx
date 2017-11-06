@@ -129,7 +129,7 @@ class Misions extends Component {
             <Row className="show-grid">
               <Col>
                 <br />
-                <Panel collapsible header="Misions of the Travelers." bsStyle="warning">
+                <Panel collapsible header="Misions of the Travelers." bsStyle="warning" defaultExpanded="true">
                   <Tab.Container id="misions-tabs" defaultActiveKey="first">
                     <Grid fluid>
                       <Row className="clearfix">
