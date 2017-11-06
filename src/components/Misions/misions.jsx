@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Col, Row, Panel, FormGroup, Form, FormControl, ControlLabel, Button, Modal, Glyphicon } from 'react-bootstrap';
+import { Grid, Tab, Row, Col, Nav, NavItem, Panel, FormGroup, Form, FormControl, ControlLabel, Button, Modal, Glyphicon } from 'react-bootstrap';
 import RichTextEditor from 'react-rte';
 import PropTypes from 'prop-types';
 
@@ -65,8 +65,6 @@ class Misions extends Component {
   }
   render() {
     const { misions } = this.props;
-    const tittleH1ini = '<h1><strong>';
-    const tittleH1fin = '</strong></h1><br/>';
     const separacion = '&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;';
     return (
       <div>
@@ -131,11 +129,34 @@ class Misions extends Component {
             <Row className="show-grid">
               <Col>
                 <br />
-                <Panel header="Misions of the Travelers." bsStyle="warning">
-                  <RichTextEditor
-                    readOnly="true"
-                    value={RichTextEditor.createValueFromString(misions.map(mision => (tittleH1ini + mision.name + separacion + mision.objectives + tittleH1fin + mision.information)), 'html')}
-                  />
+                <Panel collapsible header="Misions of the Travelers." bsStyle="warning">
+                  <Tab.Container id="misions-tabs" defaultActiveKey="first">
+                    <Grid fluid>
+                      <Row className="clearfix">
+                        <Col sm={3}>
+                          <Nav bsStyle="pills" stacked>
+                            {misions.length > 0 && misions.map(mision => (
+                              <NavItem eventKey={mision.name}>
+                                {mision.name}
+                              </NavItem>
+                            ))}
+                          </Nav>
+                        </Col>
+                        <Col sm={8}>
+                          <Tab.Content animation>
+                            {misions.length > 0 && misions.map(mision => (
+                              <Tab.Pane eventKey={mision.name}>
+                                <RichTextEditor
+                                  readOnly="true"
+                                  value={RichTextEditor.createValueFromString(mision.objectives + mision.information, 'html')}
+                                />
+                              </Tab.Pane>
+                            ))}
+                          </Tab.Content>
+                        </Col>
+                      </Row>
+                    </Grid>
+                  </Tab.Container>
                 </Panel>
               </Col>
             </Row>

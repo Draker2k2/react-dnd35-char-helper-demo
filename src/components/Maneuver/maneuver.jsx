@@ -60,7 +60,7 @@ class Maneuver extends Component {
         </Tab.Container>
         </Panel>
 
-        <Panel collapsible header="Strikes" bsStyle="danger" defaultExpanded="true">
+        <Panel collapsible header="Strikes" bsStyle="danger">
         <Tab.Container id="maneuvers-tabs" defaultActiveKey="first">
           <Row className="clearfix">
             <Col sm={2}>
@@ -95,7 +95,7 @@ class Maneuver extends Component {
         </Tab.Container>
         </Panel>
 
-        <Panel collapsible header="Counters" bsStyle="warning" defaultExpanded="true">
+        <Panel collapsible header="Counters" bsStyle="warning">
         <Tab.Container id="maneuvers-tabs" defaultActiveKey="first">
           <Row className="clearfix">
             <Col sm={2}>

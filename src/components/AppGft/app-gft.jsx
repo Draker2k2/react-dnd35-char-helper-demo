@@ -284,11 +284,14 @@ if(window.innerWidth < 1000){
               </table>
             </Panel>
           </Tab>
-          <Tab eventKey={7} title="History"><br />
+          <Tab eventKey={7} title="Maneuvers"><br />
+            <ManeuversContainer />
+          </Tab>
+          <Tab eventKey={8} title="History"><br />
             <HistoryContainer />
           </Tab>
-          <Tab eventKey={8} title="Maneuvers"><br />
-            <ManeuversContainer />
+          <Tab eventKey={9} title="Missions"><br />
+            <MisionsContainer />
           </Tab>
         </Tabs>
       </Wrapper>
@@ -488,12 +491,14 @@ if(window.innerWidth < 1000){
               </table>
             </Panel>
           </Tab>
-          <Tab eventKey={5} title="History"><br />
-            <MisionsContainer />
+          <Tab eventKey={5} title="Maneuvers"><br />
+            <ManeuversContainer />
+          </Tab>
+          <Tab eventKey={6} title="History"><br />
             <HistoryContainer />
           </Tab>
-          <Tab eventKey={6} title="Maneuvers"><br />
-            <ManeuversContainer />
+          <Tab eventKey={7} title="Missions"><br />
+            <MisionsContainer />
           </Tab>
         </Tabs>
       </Wrapper>
@@ -694,11 +699,14 @@ if(window.innerWidth < 1000){
               </Row>
             </Grid>
           </Tab>
-          <Tab eventKey={2} title="History"><br />
+          <Tab eventKey={2} title="Maneuvers"><br />
+            <ManeuversContainer />
+          </Tab>
+          <Tab eventKey={3} title="History"><br />
             <HistoryContainer />
           </Tab>
-          <Tab eventKey={3} title="Maneuvers"><br />
-            <ManeuversContainer />
+          <Tab eventKey={4} title="Missions"><br />
+            <MisionsContainer />
           </Tab>
         </Tabs>
       </Wrapper>
