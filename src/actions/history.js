@@ -27,6 +27,6 @@ export const addItem = (newDate, newTittle, newDesc) => (dispatch) => {
     tittle: newTittle,
     description: newDesc,
   };
-  axios.post(`http://localhost:${PORT}/history`, history);
+  axios.post(`https://secret-dawn-75685.herokuapp.com/history/`, history);
   dispatch({ type: ACTION_TYPES.ADD_ITEM, payload: history });
 };

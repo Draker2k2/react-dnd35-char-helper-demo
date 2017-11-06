@@ -4,7 +4,7 @@ const misionsSchema = new mongoose.Schema({
   name: String,
   objectives: String,
   information: String,
-  completed: Boolean,
+  completed: { type: Boolean, default: false },
 });
 
 module.exports = mongoose.model('misionsSchema', misionsSchema, 'misionsSchema');

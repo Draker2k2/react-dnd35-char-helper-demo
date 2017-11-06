@@ -12,7 +12,6 @@ class Misions extends Component {
       information: RichTextEditor.createEmptyValue(),
       completed: false,
       showModal: false,
-      value: RichTextEditor.createEmptyValue(),
     };
     this.handleNameInput = this.handleNameInput.bind(this);
     this.handleSubmitMessage = this.handleSubmitMessage.bind(this);
@@ -114,7 +113,7 @@ class Misions extends Component {
                           />
                         </Col>
                       </FormGroup>
-                      <FormGroup controlId="formHorizontalSummit">
+                      <FormGroup controlId="formHorizontalDate">
                         <Col smOffset={2} sm={10}>
                           <Button type="submit">
                             Submit
@@ -132,7 +131,7 @@ class Misions extends Component {
             <Row className="show-grid">
               <Col>
                 <br />
-                <Panel header="Misions of the Travelers." bsStyle="warning" defaultExpanded="false">
+                <Panel header="Misions of the Travelers." bsStyle="warning">
                   <RichTextEditor
                     readOnly="true"
                     value={RichTextEditor.createValueFromString(misions.map(mision => (tittleH1ini + mision.name + separacion + mision.objectives + tittleH1fin + mision.information)), 'html')}

@@ -21,12 +21,13 @@ export const getData = () => (dispatch) => {
   });
 };
 
-export const addItem = (newDate, newTittle, newDesc) => (dispatch) => {
-  const mision = {
-    date: newDate,
-    tittle: newTittle,
-    description: newDesc,
+export const addItem = (newName, newObjectives, newInformation, newCompleted) => (dispatch) => {
+  const misions = {
+    name: newName,
+    objectives: newObjectives,
+    information: newInformation,
+    completed: newCompleted,
   };
-  axios.post(`http://localhost:${PORT}/misions`, mision);
-  dispatch({ type: ACTION_TYPES.ADD_ITEM, payload: mision });
+  axios.post(`https://secret-dawn-75685.herokuapp.com/misions/`, misions);
+  // dispatch({ type: ACTION_TYPES.ADD_ITEM, payload: misions });
 };

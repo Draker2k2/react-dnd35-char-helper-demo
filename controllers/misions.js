@@ -10,12 +10,13 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const newHist = new Misions({
-    date: req.body.date,
-    tittle: req.body.tittle,
-    description: req.body.description,
+  const newMision = new Misions({
+    name: req.body.name,
+    objectives: req.body.objectives,
+    information: req.body.information,
+    completed: req.body.completed,
   });
-  newHist.save((err, doc) => {
+  newMision.save((err, doc) => {
     if (err) {
       res.send(err);
     } else {

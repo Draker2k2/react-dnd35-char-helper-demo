@@ -12,7 +12,7 @@ const mapStateToProps = state => (
 
 const mapDispatchToProps = dispatch => ({
   getData: () => dispatch(getData()),
-  addItem: (newName, newObjectives, newInformation) => dispatch(addItem(newName, newObjectives, newInformation)),
+  addItem: (newName, newObjectives, newInformation, newCompleted) => dispatch(addItem(newName, newObjectives, newInformation, newCompleted)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Misions);
