@@ -11,8 +11,11 @@ export function recalculateTotalBonus(state) {
   state.defenses.filter(defense => defense.id !== 'AC').map(defense => defense.classModifiers.map(classModifier =>
     defense.totalBonus += +classModifier.value,
   ));
-  state.defenses.map(defense => defense.bonuses.map(bonus =>
+  state.defenses.map(defense => defense.bonuses.filter(bonus => bonus.type !== 'ranged').map(bonus =>
     defense.totalBonus += +bonus.value,
+  ));
+  state.defenses.map(defense => defense.bonuses.filter(bonus => bonus.type === 'ranged').map(bonus =>
+    bonus.value > 0 ? defense.rangedBonus = +bonus.value : defense.rangedBonus = 0
   ));
 }
 

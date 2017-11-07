@@ -21,10 +21,12 @@ const defensesSchema = new mongoose.Schema({
       { type: 'sacred', value: 0 },
       { type: 'profane', value: 0 },
       { type: 'divine', value: 0 },
+      { type: 'ranged', value: 0 },
     ],
   },
   initialValue: { type: Number, default: 0 },
   totalBonus: { type: Number, default: 0 },
+  rangedBonus: { type: Number, default: 0 },
 });
 
 module.exports = mongoose.model('defensesSchema', defensesSchema, 'defensesSchema');
